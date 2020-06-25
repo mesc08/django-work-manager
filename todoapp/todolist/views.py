@@ -7,7 +7,7 @@ from django.utils import timezone
 from .forms import TodoForm
 from .models import todolist
 from django.contrib.auth.decorators import login_required
-
+import pdfkit
 # Create your views here.
 def home(request):
 	return render(request,'todolist/home.html')
@@ -98,4 +98,7 @@ def deletetodo(request,todolist_pk):
 	todo = get_object_or_404(todolist,pk = todolist_pk, user = request.user)
 	if request.method=='POST':
 		todo.delete()
-		return redirect('currentlist')						
+		return redirect('currentlist')
+@login_required
+def generatepdf(request):
+		return pdfkit.from_file(redirect('completedlist'),'sample.pdf')						

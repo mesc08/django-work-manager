@@ -32,4 +32,5 @@ urlpatterns = [
     path('todolist/<int:todolist_pk>',views.displaytodo,name='displaytodo'),
     path('todolist/<int:todolist_pk>/complete',views.completetodo, name='completetodo'),
     path('todolist/<int:todolist_pk>/delete',views.deletetodo,name='deletetodo'),
+    path('todolist/<int:todolist_pk>/generatepdf',views.generatepdf,name='generatepdf'),
 ]
