@@ -20,9 +20,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #Autherisation
-    path('login/',views.login, name='login'),
-    path('logout/',views.logout, name='logout'),
-    path('register/',views.register, name='register')
+    path('login/',views.logins, name='logins'),
+    path('logout/',views.logouts, name='logouts'),
+    path('register/',views.registers, name='registers')
 
     #Todolist
     path('',views.home,name='home'),
