@@ -1,4 +1,4 @@
-from django.shortcuts import render,, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
@@ -46,7 +46,7 @@ def logins(request):
 
 @login_required
 def logouts(request):
-	id request.method == 'POST':
+	if request.method == 'POST':
 		logout(request)
 		return render(request,'todolist/home.html')
 
@@ -86,7 +86,7 @@ def completedlist(request):
 	return render(request,'todolist/completedlist.html',{'todos':todo})
 
 @login_required
-def completedtodo(request,todolist_pk):
+def completetodo(request,todolist_pk):
 	todo = get_object_or_404(todolist, pk = todolist_pk, user = request.user)
 	if request.method == "POST":
 		todo.datedcompleted = timezone.now()

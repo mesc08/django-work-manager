@@ -1,0 +1,33 @@
+{% extend 'todolist/base.html' %}
+{% block content %}
+	<div class = "row justify-content-center mt-5">
+		<div class ="col-md-5">
+			<h2>New Work </h2>
+		</div>
+	</div>
+	<div class =" row justify-content-center mt-5">
+		<div class = "col-md-5">
+			{% if error %}
+				<div class = "alert alert-danger" role = "alert">
+					{{error}}
+				</div>
+			{% endif %}
+			<form method="POST">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input type="text" name="title" class="form-control" id = "title" required>
+				</div>
+				<div class="form-group">
+					<label for="description">Description</label>
+					<textarea name = "description" class = "form-control" id ="description"></textarea>
+				</div>
+				<div class="form-group form-check">
+					<input type="checkbox" name = "priority" class = "form-check-input" id = "priority">
+					<label class="form-check-label" for="priority">Priority</label>
+				</div>
+				<button type="submit" class = "btn btn-primary"> Save </button>
+			</form>
+	</div>
+</div>
+{% endblock %}

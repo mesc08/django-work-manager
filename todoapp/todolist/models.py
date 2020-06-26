@@ -2,9 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
-class Todo(models.Model):
+class todolist(models.Model):
 	title = models.CharField(max_length=40)
-	memo = models.TextField(blank = True)
+	description = models.TextField(blank = True)
 	docreation = models.DateTimeField(auto_now = True)
 	docompletion = models.DateTimeField(null=True,blank = True)
 	priority = models.BooleanField(default=False)
