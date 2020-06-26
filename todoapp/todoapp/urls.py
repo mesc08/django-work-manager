@@ -7,9 +7,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #Autherisation
+    path('register/',views.registeruser, name='registeruser'),
     path('login/',views.loginuser, name='loginuser'),
     path('logout/',views.logoutuser, name='logoutuser'),
-    path('register/',views.registeruser, name='registeruser'),
+    
 
     #Todolist
     path('',views.home,name='home'),

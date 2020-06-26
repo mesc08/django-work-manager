@@ -1,4 +1,4 @@
-{% extend "todolist/base.html" %}
+{% extends "todolist/base.html" %}
 
 {% block content %}
 
@@ -15,6 +15,7 @@
 			This is a <b>todo web application</b> which lets you <i>create an account</i>, lets you <i>login to user's</i> website.Then it will have functions like <b><u> Create a todolist </u> , <u> Activity of a todolist </u> and <u> Current activity of a list </u>. </b> This will allow user to have a organised 
 			life.  
 		</p>
+		  <a role="button" class="btn btn-primary btn-lg" href="{% url 'registeruser' %}">Start</a>
 	</div>
 </div>
 

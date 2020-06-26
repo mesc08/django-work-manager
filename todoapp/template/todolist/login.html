@@ -1,4 +1,4 @@
-{% extends "todolist/login.html" %}
+{% extends "todolist/base.html" %}
 
 {% block content %}
 <div row = "row justify-content-center mt-5">
@@ -27,7 +27,7 @@
 			</form>
 				<hr>
 				<div class = "text-center">
-					Do not have an account? <a href="{% url 'register' %}"> Register here</a>
+					Do not have an account? <a href="{% url 'registeruser' %}"> Register here</a>
 				</div>
 		</div>
 </div>
