@@ -59,8 +59,8 @@ def createtodolist(request):
 		return render(request,'todolist/createtodolist.html',{'form':TodoForm()})
 	else:
 		try:
-			todo = TodoForm(request.POST)
-			new_todo = todo.save(commit=False)
+			todos = TodoForm(request.POST)
+			new_todo = todos.save(commit=False)
 			new_todo.user = request.user
 			new_todo.save()
 			return redirect('currenttodolist')
@@ -74,38 +74,35 @@ def currenttodolist(request):
 
 @login_required
 def displaytodolist(request, todolist_pk):
-	todo = get_object_or_404(todolist ,pk =todolist_pk, user=request.user)
+	todos = get_object_or_404(todolist ,pk=todolist_pk, user=request.user)
 	if request.method =='GET':
-		form = TodoForm(instance = todo)
-		return render(request,'todolist/displaytodo.html',{'form':form, 'todo':todo})
+		form = TodoForm(instance=todos)
+		return render(request,'todolist/displaytodo.html',{'form':form, 'todos':todos})
 	else:
 		try:
-			form = TodoForm(request.POST,instance=todo)
+			form = TodoForm(request.POST,instance=todos)
 			form.save()
 			return redirect('currenttodolist')
 		except:
-			return render(request,'todolist/displaytodo.html',{'form':TodoForm(),'error':'Bad value passed in','todo': todo})
+			return render(request,'todolist/displaytodo.html',{'form':TodoForm(),'error':'Bad value passed in','todos': todos})
 
 @login_required
 def completedtodolist(request):
-	todos = todolist.objects.filter(user = request.user, datecompleted__isnull=False).order_by('-datecompleted')
+	todos = todolist.objects.filter(user=request.user, datecompleted__isnull=False).order_by('-datecompleted')
 	return render(request,'todolist/completedlist.html',{'todos': todos})
 
 
 @login_required
-def completetodolist(request,todolist_pk):
-	todo = get_object_or_404(todolist, pk = todolist_pk, user = request.user)	
-	if request.method == "POST":
-		todo.datedcompleted = timezone.now()
-		todo.save()
-		return redirect('currenttodolist')
+def completetodolist(request, todolist_pk): 
+    todo = get_object_or_404(todolist, pk=todolist_pk, user=request.user)
+    if request.method == 'POST':
+        todo.datecompleted = timezone.now()
+        todo.save()
+        return redirect('currenttodolist')
 
 @login_required
-def deletetodolist(request,todolist_pk):
-	todo = get_object_or_404(todolist,pk = todolist_pk, user = request.user)
-	if request.method=='POST':
-		todo.delete()
-		return redirect('currenttodolist')
-'''@login_required
-def generatepdf(request):
-		return pdfkit.from_file(redirect('completedlist'),'sample.pdf')						'''
+def deletetodolist(request, todolist_pk):
+    todo = get_object_or_404(todolist, pk=todolist_pk, user=request.user)
+    if request.method == 'POST':
+        todo.delete()
+        return redirect('currenttodolist')

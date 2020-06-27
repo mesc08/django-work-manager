@@ -4,7 +4,7 @@
 <div class = "row justify-content-center mt-5">
 	<div class = "col-md-10">
 		{% if todos %}
-			<h1>{{todos.count}} Current Works {{todos.count|pluralize}}</h1>
+			<h1>{{ todos.count }} Current Work{{ todos.count|pluralize }}</h1>
 		{% else %}
 			<h1>Current Works</h1>
 		{% endif %}
@@ -22,7 +22,7 @@
                 <div class="text-center">
                 <h2>Looks like you don't have any todos! Nice work.</h2>
             <br>
-            <a role="button" class="btn btn-primary" href="{% url 'createtodolist' %}">New Todo</a>
+            <a role="button" class="btn btn-primary" href="{% url 'createtodolist' %}">New work</a>
             </div>
 		{% endif %}
 	</div>

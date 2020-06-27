@@ -18,6 +18,6 @@ urlpatterns = [
     path('currenttodolist/',views.currenttodolist, name='currenttodolist'),
     path('completedtodolist/',views.completedtodolist,name='completedtodolist'),
     path('todolist/<int:todolist_pk>',views.displaytodolist,name='displaytodolist'),
-    path('todolist/<int:todolist_pk>/complete',views.completetodolist, name='completetodolist'),
-    path('todolist/<int:todolist_pk>/delete',views.deletetodolist,name='deletetodolist'),
+    path('todolist/<int:todolist_pk>/completetodolist',views.completetodolist, name='completetodolist'),
+    path('todolist/<int:todolist_pk>/deletetodolist',views.deletetodolist,name='deletetodolist'),
 ]
