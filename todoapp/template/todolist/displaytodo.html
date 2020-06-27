@@ -24,7 +24,7 @@
 				<textarea name="description" rows="5" class="form-control" id="description">{{todo.description}}</textarea>
 			</div>
 			<div class="form-group">
-				<input type="checkbox" name="priority" class = "form-check-input" id= "priority" {% if todo.priority %}checked{% endif %} required>
+				<input type="checkbox" name="priority" class = "form-check-input" id= "priority" {% if todo.priority %}checked{% endif %}>
 				<label class = "form-check-label" for="priority"> Priority </label>
 			</div>
 			<button type="submit" class="btn btn-primary">Save </button>
@@ -34,12 +34,12 @@
 	</div>
 </div>
 {% if todo.datecompleted is None %}
-	<form style='display':none; method="POST" action="{% url 'completetodolist' todo.id  %}">
+	<form style='display:none;' method="POST" action="{% url 'completetodolist' todo.id  %}">
 		{% csrf_token %}
 		<button id = "complete" type="submit">Complete </button>
 	</form>
 {% endif %}
-	<form style='display':none; method="POST" action="{% url 'deletetodolist' todo.id %}">
+	<form style='display:none;'method ="POST" action="{% url 'deletetodolist' todo.id %}">
 		{% csrf_token %}
 		<button id ="delete" type="submit">Delete </button>
 	</form>

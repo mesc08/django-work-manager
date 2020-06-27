@@ -89,7 +89,7 @@ def displaytodolist(request, todolist_pk):
 @login_required
 def completedtodolist(request):
 	todos = todolist.objects.filter(user = request.user, datecompleted__isnull=False).order_by('-datecompleted')
-	return render(request,'todolist/completedlist.html',{'todos':todos})
+	return render(request,'todolist/completedlist.html',{'todos': todos})
 
 
 @login_required
