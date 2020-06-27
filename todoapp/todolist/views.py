@@ -65,7 +65,7 @@ def createtodolist(request):
 			new_todo.save()
 			return redirect('currenttodolist')
 		except ValueError:
-			return render(request,'todolist/currentlist.html',{'form':TodoForm(),'error':'Bad Value'})
+			return render(request,'todolist/createtodolist.html',{'form':TodoForm(),'error':'Bad Value'})
 
 @login_required
 def currenttodolist(request):
@@ -94,7 +94,7 @@ def completedtodolist(request):
 
 @login_required
 def completetodolist(request,todolist_pk):
-	todo = get_object_or_404(todolist, pk = todolist_pk, user = request.user)
+	todo = get_object_or_404(todolist, pk = todolist_pk, user = request.user)	
 	if request.method == "POST":
 		todo.datedcompleted = timezone.now()
 		todolist.save()

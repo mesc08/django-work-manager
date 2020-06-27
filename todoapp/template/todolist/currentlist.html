@@ -13,14 +13,14 @@
 <div class = "row justify-content-center mt-5">
 	<div class = "col-md-10">
 	{% if todos %}
-		<div class = "list-group">
-			{% for todo in todos %}
-				<a href = "{% url 'displaytodolist' todo.id %}" class="list-group-item list-group-item-action{% if todo.priority %} list-group-item-danger{% endif %}"><b>{{ todo.title }}</b>{% if todo.description %} - {{ todo.description|truncatechars:30 }}{% endif %}</a>
+            <div class="list-group">
+                {% for todo in todos %}
+                    <a href="{% url 'displaytodolist' todo.id %}" class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger{% endif %}"><b>{{ todo.title }}</b>{% if todo.description %} - {{ todo.description|truncatechars:30 }}{% endif %}</a>
                 {% endfor %}
             </div>
         {% else %}
-            <div class="text-center">
-                <h2>Nothing to work on</h2>
+                <div class="text-center">
+                <h2>Looks like you don't have any todos! Nice work.</h2>
             <br>
             <a role="button" class="btn btn-primary" href="{% url 'createtodolist' %}">New Todo</a>
             </div>
