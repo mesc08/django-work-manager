@@ -45,7 +45,7 @@ def loginuser(request):
 			return render(request,'todolist/login.html',{'form':AuthenticationForm(),'error':'username and password did not match'})
 		else:
 			login(request, user)
-			return render('currenttodolist')
+			return redirect('currenttodolist')
 
 @login_required
 def logoutuser(request):
@@ -66,16 +66,18 @@ def createtodolist(request):
 			return redirect('currenttodolist')
 		except ValueError:
 			return render(request,'todolist/currentlist.html',{'form':TodoForm(),'error':'Bad Value'})
+
 @login_required
 def currenttodolist(request):
 	todos = todolist.objects.filter(user=request.user,datecompleted__isnull=True)
 	return render(request,'todolist/currentlist.html',{'todos':todos})
+
 @login_required
 def displaytodolist(request, todolist_pk):
-	todo = get_object_or_404(todolist,pk = todolist_pk, user = request.user)
+	todo = get_object_or_404(todolist ,pk =todolist_pk, user=request.user)
 	if request.method =='GET':
 		form = TodoForm(instance = todo)
-		return render(request,'todolist/displaytodo.html',{'form':form,'todo':todo})
+		return render(request,'todolist/displaytodo.html',{'form':form, 'todo':todo})
 	else:
 		try:
 			form = TodoForm(request.POST,instance=todo)
@@ -83,10 +85,12 @@ def displaytodolist(request, todolist_pk):
 			return redirect('currenttodolist')
 		except:
 			return render(request,'todolist/displaytodo.html',{'form':TodoForm(),'error':'Bad value passed in','todo': todo})
+
 @login_required
 def completedtodolist(request):
-	todos = todolist.objects.filter(user = user.request, datecompleted__isnull=False).order_by('-datecompleted')
-	return render(request,'todolist/completedlist.html',{'todos':todo})
+	todos = todolist.objects.filter(user = request.user, datecompleted__isnull=False).order_by('-datecompleted')
+	return render(request,'todolist/completedlist.html',{'todos':todos})
+
 
 @login_required
 def completetodolist(request,todolist_pk):

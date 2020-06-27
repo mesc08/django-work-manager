@@ -15,18 +15,20 @@
 <body>
 
 
+
 <nav class="navbar navbar-expand-md navbar-light bg-warning">
 <div class="container">
     <a class="navbar-brand" href="{% url 'home' %}">
          <img src="{% static 'todo/logo.png' %}" width="30" height="30" class="d-inline-block align-top">
-        <span>Work Manager</span>
-    </a>
+        <span>Django Work Manager</span>
+    </a>      
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-				{%if user.is_authenticated %}
-				<ul class="navbar-nav mr-auto">
+    {% if user.is_authenticated %}
+        <ul class="navbar-nav mr-auto">
+			
 					<li class = "nav-item {{current}}">
 						<a class = "nav-link" href = "{% url 'currenttodolist' %}"> Current </a>
 					</li>
@@ -36,9 +38,9 @@
 					<li class = "nav-item {{create}}">
 						<a class = "nav-link" href = "{% url 'createtodolist' %}"> Create </a>
 					</li>
-				</ul>
-				{% endif %}
-				<ul class = "navbar-nav ml-auto">
+			</ul>
+			{% endif %}
+			<ul class = "navbar-nav ml-auto">
 					{% if user.is_authenticated %}
 					<li class ="nav-item">
 						<a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout </a>
@@ -55,7 +57,7 @@
 							<a class = "nav-link" href="{% url 'registeruser' %}">register</a>
 						</li>
 					{% endif %}
-				</ul>
+			</ul>
 			</div>
 		</div>
 	</nav>
