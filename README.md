@@ -32,5 +32,5 @@ windows
 7)```python manage.py runserver```
 
 ## For Outputs 
-Visit the [screenshot](https://github.com/mesc08/django-work-manager/todoapp/Screenshot) folder.
+Visit the [screenshot](https://github.com/mesc08/django-work-manager/tree/master/todoapp/Screenshot) folder.
 
