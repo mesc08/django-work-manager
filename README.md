@@ -7,16 +7,16 @@ responsive application. I have build up a work manager type of django-project wh
 function like a work manager which keep tracks of all the activities that a person must perform
 currently and what he has performed in the past.
 
-##Technological stack used:
+# Technological stack used:
 
-####Languages used:-
+#### Languages used:-
 Python , html, css, javascript, Git
 
-####Framework in use:-
+#### Framework in use:-
 Django, Pycharm
 
-####Database:-
+#### Database:-
 Sqlite3
 
-####Environment:-
+#### Environment:-
 windows
