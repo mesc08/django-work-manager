@@ -11,7 +11,6 @@ urlpatterns = [
     path('login/',views.loginuser, name='loginuser'),
     path('logout/',views.logoutuser, name='logoutuser'),
     
-
     #Todolist
     path('',views.home,name='home'),
     path('createtodolist/',views.createtodolist, name='createtodolist'),
