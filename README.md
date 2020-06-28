@@ -20,3 +20,17 @@ Sqlite3
 
 #### Environment:-
 windows
+
+## Running Instructions:-
+
+1)``` git clone https://github.com/mesc08/django-work-manager```
+2)``` mkvirtualenv env```
+3)```pip install django```
+4)```pip install request```
+5)```cd django-work-manager```
+6)```cd todo```
+7)```python manage.py runserver```
+
+## For Outputs 
+Visit the [screenshot](https://github.com/mesc08/django-work-manager/todoapp/Screenshot) folder.
+
