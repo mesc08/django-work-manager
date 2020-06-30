@@ -1,7 +1,10 @@
 # Byte-compiled / optimized / DLL files
 .idea
 
-**/__pycache__
+todoapp/db.sqlite3
+todoapp/todoapp/__pycache__/
+todoapp/todolist/__pycache__/
+todoapp/todolist/migrations/
 *.py[cod]
 *$py.class
 
