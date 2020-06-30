@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from todolist import views
 
 urlpatterns = [
@@ -19,4 +19,5 @@ urlpatterns = [
     path('todolist/<int:todolist_pk>',views.displaytodolist,name='displaytodolist'),
     path('todolist/<int:todolist_pk>/completetodolist',views.completetodolist, name='completetodolist'),
     path('todolist/<int:todolist_pk>/deletetodolist',views.deletetodolist,name='deletetodolist'),
+    path('api/', include('todolist.urls')),
 ]
