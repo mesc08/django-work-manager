@@ -4,7 +4,8 @@
   "description": "```Aim was to basically learn how to make a django-application```",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development --watch ./todoapp/frontend/src/index.js --output ./todoapp/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./todoapp/frontend/src/index.js --output ./todoapp/frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
