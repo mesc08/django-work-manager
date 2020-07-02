@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getTodos } from "../../actions/todos";
+import { getTodos, deleteTodos } from "../../actions/todos";
 
 class Todos extends Component {
-  static PropTypes = {
+  static propTypes = {
     todos: PropTypes.array.isRequired,
+    getTodos: PropTypes.func.isRequired,
+    deleteTodos: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
@@ -13,6 +15,8 @@ class Todos extends Component {
   }
 
   render() {
+    // console.log(this.props.todos);
+
     return (
       <Fragment>
         <h2>To-Do's</h2>
@@ -25,6 +29,7 @@ class Todos extends Component {
             <th>Date Completed</th>
             <th>Priority</th>
             <th>User ID</th>
+            <th />
           </thead>
           <tbody>
             {this.props.todos.map((todo) => (
@@ -34,8 +39,16 @@ class Todos extends Component {
                 <td>{todo.description}</td>
                 <td>{todo.created}</td>
                 <td>{todo.datecompleted}</td>
-                <td>{todo.priority}</td>
+                <td>{todo.priority ? "Yes" : "No"}</td>
                 <td>{todo.user}</td>
+                <td>
+                  <button
+                    onClick={this.props.deleteTodos.bind(this, todo.id)}
+                    className="btn btn-danger btn-sm"
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -49,4 +62,4 @@ const mapStateToProps = (state) => ({
   todos: state.todos.todos,
 });
 
-export default connect(mapStateToProps, { getTodos })(Todos);
+export default connect(mapStateToProps, { getTodos, deleteTodos })(Todos);

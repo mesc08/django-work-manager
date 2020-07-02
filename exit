@@ -1,0 +1,185 @@
+[33mcommit c9d517bcdf744e6e9cc19b6c2f7786f778ec3fe5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Thu Jul 2 20:47:50 2020 +0530
+
+    implemented get todos with axios, API and React
+
+[33mcommit 3c6efa357c3b6992c9be1a15bd985003efd42487[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Wed Jul 1 13:06:45 2020 +0530
+
+    implemented and integrated React.js into Django
+
+[33mcommit 6bbc3041ee2e8c9264674fd775ad065e0f0b6bcb[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Wed Jul 1 10:04:20 2020 +0530
+
+    first steps in Reactifying Django
+
+[33mcommit fd35093049a35686723be83570b1684583a6bb98[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Wed Jul 1 10:02:03 2020 +0530
+
+    updated .gitignore file once again
+
+[33mcommit fd907f6b2ed42660c2a5c5470f2e9a1020c280c1[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Tue Jun 30 20:27:57 2020 +0530
+
+    implemented REST API
+
+[33mcommit 0453cebdd457e6dd3dd581958cb3d865a70c16ce[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Tue Jun 30 20:25:05 2020 +0530
+
+    removed unnecessary tracked files
+
+[33mcommit 2545710dee60df75c90e9ae4f0a4127df38a6785[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Tue Jun 30 20:22:46 2020 +0530
+
+    removed unnecessary tracked files
+
+[33mcommit 75aefa4ae1a4cab893fd750f4ab3ffd20b511671[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Tue Jun 30 20:20:32 2020 +0530
+
+    updated .gitignore file
+
+[33mcommit 08e8f7aa414f6873e2c194d85f2826f3aba4681b[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Tue Jun 30 20:19:30 2020 +0530
+
+    updated .gitignore file
+
+[33mcommit acb77c87ebc31a781701ad9c3d402f8d8c7aef21[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Tue Jun 30 20:18:54 2020 +0530
+
+    updated .gitignore file
+
+[33mcommit 24aae28ac41752796ff443653de12437a9fbce83[m
+Author: Somnath <p.somnath2599@gmail.com>
+Date:   Tue Jun 30 17:57:30 2020 +0530
+
+    added .gitignore file
+
+[33mcommit 05fd913583920310e3f1af77b47dae6a1fff3bd2[m
+Author: SRIJAN CHAKRABORTY <40038482+mesc08@users.noreply.github.com>
+Date:   Sun Jun 28 21:06:34 2020 +0530
+
+    Update README.md
+
+[33mcommit 7cc29f7285e0b20c37d2a483ce70df6f266f968f[m
+Author: SRIJAN CHAKRABORTY <40038482+mesc08@users.noreply.github.com>
+Date:   Sun Jun 28 21:05:44 2020 +0530
+
+    Update README.md
+
+[33mcommit 1a8682ed573958a693f69fc8e79e2979b11a65fb[m
+Author: SRIJAN CHAKRABORTY <40038482+mesc08@users.noreply.github.com>
+Date:   Sun Jun 28 19:43:48 2020 +0530
+
+    Delete dbsqlite
+
+[33mcommit b78679c6c5d1deba808e372743bd6075fa7af4c9[m
+Author: SRIJAN CHAKRABORTY <40038482+mesc08@users.noreply.github.com>
+Date:   Sun Jun 28 19:28:40 2020 +0530
+
+    Update README.md
+
+[33mcommit 2f9fa59e9d81bef1ba820d5ac8106f83b7ddf3d1[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Sun Jun 28 13:12:52 2020 +0530
+
+    update readme
+
+[33mcommit 60a0727ab51106ddf2f29867bd6bec4547fd4ccc[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Sun Jun 28 12:42:14 2020 +0530
+
+    a little update
+
+[33mcommit 8bae179b4c8a8702595c87f9ea21f4cb980089a2[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Sun Jun 28 10:25:09 2020 +0530
+
+    finally project done after 3days
+
+[33mcommit 414ec34a43a6e3d5a544171f01eefa50a5dfd807[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Sat Jun 27 21:55:14 2020 +0530
+
+    app successfully runned
+
+[33mcommit eea4faf258ccdca7753ef3f1f7715ea0edb6d59b[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Sat Jun 27 18:12:48 2020 +0530
+
+    11th update
+
+[33mcommit 26dd7763c5d4e10f415ae0186ec35987cd71f34c[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Sat Jun 27 17:21:37 2020 +0530
+
+    10th update
+
+[33mcommit 4ec3dc385f2be0f7d5743797e3ff764a082c8b73[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Sat Jun 27 14:32:12 2020 +0530
+
+    9th update
+
+[33mcommit d5b0791ef0671651a32259bbeb5cca2567468a7b[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Sat Jun 27 12:11:44 2020 +0530
+
+    8th update
+
+[33mcommit f9fb85ce6e6d2713e791e3f1a40f139695040bfa[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Sat Jun 27 03:13:03 2020 +0530
+
+    7th update
+
+[33mcommit 3ebb74a17ae6b7fc5facfb9e455829e11bd9d51a[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Sat Jun 27 01:12:45 2020 +0530
+
+    6th update
+
+[33mcommit 51f04f75b572145f77db2e3c4fff1ae165249960[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Fri Jun 26 20:48:09 2020 +0530
+
+    5th update
+
+[33mcommit e060431b0057d8b690c5ec632490952e091682d9[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Fri Jun 26 20:43:11 2020 +0530
+
+    4th update
+
+[33mcommit 8aeef9e17195b21cae053311b8b3397309bb2954[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Fri Jun 26 03:16:00 2020 +0530
+
+    3rd update
+
+[33mcommit 1ab108b5d8014685115f63ea1fab34927b455ad7[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Fri Jun 26 03:02:56 2020 +0530
+
+    2nd update
+
+[33mcommit f92f22163bd8353cb1b127daa082c8db971c3b71[m
+Author: SRIJAN CHAKRABORTY <srijanch0810@gmail.com>
+Date:   Fri Jun 26 02:26:23 2020 +0530
+
+    2nd update
+
+[33mcommit cdfe802f3bacfd416b3c2fb163576c98b5bbd12b[m
+Author: SRIJAN CHAKRABORTY <40038482+mesc08@users.noreply.github.com>
+Date:   Fri Jun 26 01:10:51 2020 +0530
+
+    Initial commit
