@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GET_TODOS, DELETE_TODO, ADD_TODO } from "./types";
+import { GET_TODOS, DELETE_TODO, ADD_TODO, GET_ERRORS } from "./types";
 
 //GET TODOS
 export const getTodos = () => (dispatch) => {
@@ -38,5 +38,15 @@ export const addTodo = (todo) => (dispatch) => {
         payload: res.data,
       });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      const errors = {
+        msg: err.response.data,
+        status: err.response.status,
+      };
+      // console.log(errors);
+      dispatch({
+        type: GET_ERRORS,
+        payload: errors,
+      });
+    });
 };

@@ -29,7 +29,7 @@ class Form extends Component {
       user: 16,
     };
 
-    console.log(todo);
+    // console.log(todo);
     this.props.addTodo(todo);
   };
 

@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class todolist(models.Model):
     title = models.CharField(max_length=40)
-    description = models.TextField(blank=True)
+    description = models.TextField()
     created = models.DateTimeField(auto_now=True)
     datecompleted = models.DateTimeField(null=True, blank=True)
     priority = models.BooleanField(default=False)
