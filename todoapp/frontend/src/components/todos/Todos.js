@@ -19,7 +19,7 @@ class Todos extends Component {
 
     return (
       <Fragment>
-        <h2>To-Do's</h2>
+        <h2>List of To-dos</h2>
         <table className="table table-striped">
           <thead>
             <th>Id</th>

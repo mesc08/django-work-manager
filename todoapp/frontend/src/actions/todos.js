@@ -1,4 +1,5 @@
 import axios from "axios";
+import { createMessage, returnErrors } from "./messages";
 
 import { GET_TODOS, DELETE_TODO, ADD_TODO, GET_ERRORS } from "./types";
 
@@ -12,7 +13,9 @@ export const getTodos = () => (dispatch) => {
         payload: res.data,
       });
     })
-    .catch((err) => console.log(err));
+    .catch((err) =>
+      dispatch(returnErrors(err.response.data, err.response.status))
+    );
 };
 
 //DELETE TODOS
@@ -20,6 +23,7 @@ export const deleteTodos = (id) => (dispatch) => {
   axios
     .delete(`/api/todolists/${id}`)
     .then((res) => {
+      dispatch(createMessage({ deleteTodo: "To-Do Deleted" }));
       dispatch({
         type: DELETE_TODO,
         payload: id,
@@ -33,20 +37,13 @@ export const addTodo = (todo) => (dispatch) => {
   axios
     .post("/api/todolists/", todo)
     .then((res) => {
+      dispatch(createMessage({ addTodo: "To-Do added" }));
       dispatch({
         type: ADD_TODO,
         payload: res.data,
       });
     })
-    .catch((err) => {
-      const errors = {
-        msg: err.response.data,
-        status: err.response.status,
-      };
-      // console.log(errors);
-      dispatch({
-        type: GET_ERRORS,
-        payload: errors,
-      });
-    });
+    .catch((err) =>
+      dispatch(returnErrors(err.response.data, err.response.status))
+    );
 };

@@ -6,10 +6,11 @@ import PropTypes from "prop-types";
 class Alerts extends Component {
   static propTypes = {
     error: PropTypes.object.isRequired,
+    message: PropTypes.object.isRequired,
   };
 
   componentDidUpdate(prevProps) {
-    const { error, alert } = this.props;
+    const { error, alert, message } = this.props;
     if (error !== prevProps.error) {
       // alert.error("There is an error");
       // console.log(error.msg.msg.description, error.msg.msg.title);
@@ -20,20 +21,13 @@ class Alerts extends Component {
         alert.error(`Description: ${error.msg.msg.description.join()}`);
       }
     }
+
+    if (message !== prevProps.message) {
+      if (message.deleteTodo) alert.success(message.deleteTodo);
+      if (message.addTodo) alert.success(message.addTodo);
+      // if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
+    }
   }
-
-  // componentDidUpdate(prevProps) {
-  //   const { error, alert } = this.props;
-
-  //   if (error !== prevProps.error) {
-  //     if (error.msg.title) {
-  //       alert.error(`Title: ${error.msg.title.join()}`);
-  //     }
-  //     if (error.msg.description) {
-  //       alert.error(`Description: ${error.msg.description.join()}`);
-  //     }
-  //   }
-  // }
 
   render() {
     return <Fragment />;
@@ -42,6 +36,7 @@ class Alerts extends Component {
 
 const mapStateToProps = (state) => ({
   error: state.errors,
+  message: state.messages,
 });
 
 export default connect(mapStateToProps)(withAlert()(Alerts));

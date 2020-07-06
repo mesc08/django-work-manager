@@ -31,6 +31,11 @@ class Form extends Component {
 
     // console.log(todo);
     this.props.addTodo(todo);
+    this.setState({
+      title: "",
+      description: "",
+      priority: "0",
+    });
   };
 
   render() {
