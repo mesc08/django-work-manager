@@ -21,16 +21,17 @@ class Form extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-
     const todo = {
       title: this.state.title,
       description: this.state.description,
       priority: parseInt(this.state.priority),
-      user: 16,
     };
-
-    // console.log(todo);
     this.props.addTodo(todo);
+    this.setState({
+      title: "",
+      description: "",
+      priority: "0",
+    });
   };
 
   render() {
