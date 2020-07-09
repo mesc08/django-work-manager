@@ -5,31 +5,31 @@ import PropTypes from "prop-types";
 
 class Alerts extends Component {
   static propTypes = {
-    error: PropTypes.object.isRequired,
-    message: PropTypes.object.isRequired,
+    error: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
   };
 
   componentDidUpdate(prevProps) {
     const { error, alert, message } = this.props;
-    if (error !== prevProps.error) {
-      // alert.error("There is an error");
-      // console.log(error.msg.msg.description, error.msg.msg.title);
-      if (error.msg.msg.title) {
-        alert.error(`Title: ${error.msg.msg.title.join()}`);
-      }
-      if (error.msg.msg.description) {
-        alert.error(`Description: ${error.msg.msg.description.join()}`);
-      }
-    }
+    // if (error !== prevProps.error) {
+    //   if (error.msg.name) alert.error(`Name: ${error.msg.name.join()}`);
+    //   if (error.msg.email) alert.error(`Email: ${error.msg.email.join()}`);
+    //   if (error.msg.message)
+    //     alert.error(`Message: ${error.msg.message.join()}`);
+    //   if (error.msg.non_field_errors)
+    //     alert.error(error.msg.non_field_errors.join());
+    //   if (error.msg.username) alert.error(error.msg.username.join());
+    // }
 
     if (message !== prevProps.message) {
-      if (message.deleteTodo) alert.success(message.deleteTodo);
-      if (message.addTodo) alert.success(message.addTodo);
-      // if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
+      if (message.deleteTodo) alert.success(message.deleteLead);
+      if (message.addTodo) alert.success(message.addLead);
+      if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
     }
   }
 
   render() {
+    // console.log(this.props);
     return <Fragment />;
   }
 }

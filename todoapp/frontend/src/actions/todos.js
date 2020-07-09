@@ -1,12 +1,12 @@
 import axios from "axios";
 import { createMessage, returnErrors } from "./messages";
+import { tokenConfig } from "./auth";
+import { GET_TODOS, DELETE_TODO, ADD_TODO } from "./types";
 
-import { GET_TODOS, DELETE_TODO, ADD_TODO, GET_ERRORS } from "./types";
-
-//GET TODOS
-export const getTodos = () => (dispatch) => {
+// GET TODOS
+export const getTodos = () => (dispatch, getState) => {
   axios
-    .get("/api/todolists/")
+    .get("/api/todolists", tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: GET_TODOS,
@@ -18,12 +18,12 @@ export const getTodos = () => (dispatch) => {
     );
 };
 
-//DELETE TODOS
-export const deleteTodos = (id) => (dispatch) => {
+// DELETE TODO
+export const deleteTodos = (id) => (dispatch, getState) => {
   axios
-    .delete(`/api/todolists/${id}`)
+    .delete(`/api/todolists/${id}`, tokenConfig(getState))
     .then((res) => {
-      dispatch(createMessage({ deleteTodo: "To-Do Deleted" }));
+      dispatch(createMessage({ deleteTodo: "Todo Deleted" }));
       dispatch({
         type: DELETE_TODO,
         payload: id,
@@ -32,12 +32,17 @@ export const deleteTodos = (id) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-//ADD TODO
-export const addTodo = (todo) => (dispatch) => {
+// ADD TODO
+export const addTodo = (lead) => (dispatch, getState) => {
+  const user = getState().auth.user.id;
+  lead = {
+    ...lead,
+    user: user,
+  };
   axios
-    .post("/api/todolists/", todo)
+    .post(`/api/todolists/`, lead, tokenConfig(getState))
     .then((res) => {
-      dispatch(createMessage({ addTodo: "To-Do added" }));
+      dispatch(createMessage({ addTodo: "Todo Added" }));
       dispatch({
         type: ADD_TODO,
         payload: res.data,
